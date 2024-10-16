@@ -70,24 +70,30 @@ http {
         }
     }
 }
-b. Algorithmes de répartition
-Round Robin : Les requêtes sont distribuées de manière égale entre les serveurs.
-Least Connections : Les requêtes sont envoyées au serveur ayant le moins de connexions actives.
-IP Hashing : Les requêtes sont distribuées en fonction de l'adresse IP du client, assurant que le même client soit dirigé vers le même serveur.
-c. Déploiement d'un load balancer
+## b. Algorithmes de répartition
+- **Round Robin** : Les requêtes sont distribuées de manière égale entre les serveurs.
+- **Least Connections** : Les requêtes sont envoyées au serveur ayant le moins de connexions actives.
+- **IP Hashing** : Les requêtes sont distribuées en fonction de l'adresse IP du client, assurant que le même client soit dirigé vers le même serveur.
+
+## c. Déploiement d'un load balancer
 Le déploiement d'un load balancer dans un environnement distribué peut se faire en plaçant NGINX ou HAProxy en tant que serveur frontal. Lors d'une attaque DDoS, la charge du trafic est répartie, ce qui réduit la probabilité qu'un seul serveur soit submergé.
 
-3. Bases de données distribuées et leur mode de fonctionnement
+---
+
+## 3. Bases de données distribuées et leur mode de fonctionnement
 Les bases de données distribuées, telles que MongoDB et Cassandra, sont conçues pour gérer de grandes quantités de données sur plusieurs serveurs.
 
-a. Fonctionnement des bases de données distribuées
+### a. Fonctionnement des bases de données distribuées
 Ces bases de données répliquent les données sur plusieurs nœuds pour assurer la disponibilité et la résilience. Lorsqu'une requête est reçue, elle est redirigée vers le nœud approprié.
 
-b. Partage de la charge des requêtes
+### b. Partage de la charge des requêtes
 Les bases de données distribuées utilisent des techniques telles que le partitionnement et la réplication pour partager la charge des requêtes. Cela signifie qu'en cas d'attaque DDoS, la charge est répartie entre plusieurs nœuds, ce qui minimise l'impact sur un seul serveur.
 
-c. Avantages et limites
-Avantages : Haute disponibilité, résilience aux pannes, et capacité à gérer de grandes quantités de données.
-Limites : Complexité de mise en œuvre, latence potentielle due à la réplication des données, et le risque d'incohérences de données.
-Conclusion
+### c. Avantages et limites
+- **Avantages** : Haute disponibilité, résilience aux pannes, et capacité à gérer de grandes quantités de données.
+- **Limites** : Complexité de mise en œuvre, latence potentielle due à la réplication des données, et le risque d'incohérences de données.
+
+---
+
+## Conclusion
 La mise en œuvre de solutions telles que fail2ban, les load balancers et les bases de données distribuées est essentielle pour se défendre contre les attaques DDoS. Chacune de ces solutions offre des avantages uniques et, lorsqu'elles sont combinées, elles forment une stratégie robuste pour protéger les infrastructures en ligne. En comprenant et en déployant ces technologies, les organisations peuvent mieux se préparer à faire face à la menace croissante des attaques DDoS.
